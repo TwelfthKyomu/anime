@@ -1,0 +1,21 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '@/styles/abstact/colors' as *;
+
+$mobile-width: 375;
+$desktop-width: 1440;
+
+@function m-vw($px) {
+	@return calc($px / $mobile-width * 100vw);
+}
+
+@function d-vw($px) {
+	@return calc($px / $desktop-width * 100vw);
+}
+
+@function get-color($category, $type, $shade: null) {
+	@if $shade != null {
+		@return map.get(map.get(map.get($colors, $category), $type), $shade);
+	}
+	@return map.get(map.get($colors, $category), $type);
+}

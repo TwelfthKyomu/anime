@@ -1,0 +1,8 @@
+{
+    // ...existing code...
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+    "editor.codeActions.showPath": true
+    // ...existing code...
+}

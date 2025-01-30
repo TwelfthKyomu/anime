@@ -1,0 +1,30 @@
+@use './function/functions' as *;
+
+body > * {
+	color: get-color(text, light, 300);
+}
+
+header, footer, section {
+	padding-inline: d-vw(48);
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	gap: d-vw(24);
+}
+
+main {
+	//min-height: 100dvh;
+}
+
+::selection {
+	background: rgba(get-color(hover, dark, primary), 0.45);
+}
+
+body {
+	user-select: none;
+	font-family: Rubik, sans-serif;
+	color: get-color(text, light, 100);
+	background: get-color(background, dark, 200);
+}

@@ -1,0 +1,5 @@
+export const episodes = [
+    '/videos/ep1.mp4',
+    '/videos/ep2.mp4',
+    '/videos/ep3.mp4'
+];

@@ -1,0 +1,113 @@
+@use '@/styles/function/functions' as *;
+@use '@/styles/function/mixin' as *;
+
+.player {
+	background: #1a1a1a;
+	overflow: hidden;
+	border-radius: d-vw(12);
+}
+
+.video {
+	width: 100%;
+	height: 70vh;
+	object-fit: contain;
+}
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	background: rgba(0, 0, 0, 0.8);
+	padding: d-vw(12);
+	gap: d-vw(12);
+}
+
+.playingInline {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: d-vw(24);
+}
+
+.playButton {
+	cursor: pointer;
+	border-radius: d-vw(8);
+	padding: d-vw(12) d-vw(20);
+}
+
+.progress {
+	width: 100%;
+	margin: 1rem 0;
+	accent-color: get-color(interaction, active, light);
+	height: d-vw(10);
+}
+
+.episodeSelector {
+	display: flex;
+	gap: d-vw(8);
+}
+
+.episodeButton {
+	background: #2d2d2d;
+	color: white;
+	padding: 5px 10px;
+	cursor: pointer;
+	border-radius: d-vw(8);
+	width: d-vw(40);
+	height: d-vw(40);
+	font-size: d-vw(16);
+
+	@include transition(filter);
+
+	&:hover {
+		filter: brightness(1.4);
+	}
+}
+
+.episodeButton.active {
+	background: get-color(interaction, active, light);
+}
+
+.previewTooltip {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.9);
+	border-radius: d-vw(8);
+	padding: d-vw(8);
+	pointer-events: none;
+	z-index: 1000;
+}
+
+.previewVideo {
+	border-radius: d-vw(4);
+	background: #000;
+	object-fit: contain;
+}
+
+.previewTime {
+	text-align: center;
+	color: white;
+	margin-top: d-vw(4);
+	font-size: d-vw(12);
+}
+
+.progressContainer {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.bufferingIndicator {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	background: rgba(0, 0, 0, 0.7);
+	padding: d-vw(16);
+	border-radius: d-vw(8);
+	display: none;
+
+	&.visible {
+		display: block;
+	}
+}
