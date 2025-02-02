@@ -1,0 +1,30 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+  max-height: 15rem;
+  overflow-y: auto;
+  @include custom-scrollbar(0.25rem);
+}
+
+.item {
+  width: 100%;
+  text-align: left;
+  padding: $spacing-2 $spacing-3;
+  font-size: $font-sm;
+  color: $text-secondary;
+  background: transparent;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  @include transition(background, color);
+
+  @include max-sm {
+    padding: $spacing-2;
+    font-size: $font-xs;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: $white;
+  }
+}

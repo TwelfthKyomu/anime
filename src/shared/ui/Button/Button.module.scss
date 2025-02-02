@@ -1,0 +1,75 @@
+@use 'sass:color';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: $font-semibold;
+  cursor: pointer;
+  @include transition(all);
+  outline: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @include focus-visible;
+}
+
+.primary {
+  background: $primary-color;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background: color.adjust($primary-color, $lightness: -10%);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.sm {
+  padding: $spacing-1 $spacing-3;
+  font-size: $font-sm;
+}
+
+.md {
+  padding: $spacing-2 $spacing-5;
+  font-size: $font-base;
+}
+
+.lg {
+  padding: $spacing-3 $spacing-6;
+  font-size: $font-lg;
+}

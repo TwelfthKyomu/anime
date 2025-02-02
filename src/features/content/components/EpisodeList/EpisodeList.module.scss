@@ -1,0 +1,200 @@
+.container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: $spacing-6;
+
+  @include max-md {
+    padding: $spacing-4;
+    border-radius: 0.5rem;
+  }
+
+  @include max-sm {
+    padding: $spacing-3;
+  }
+}
+
+.header {
+  margin-bottom: $spacing-4;
+}
+
+.title {
+  font-size: $font-2xl;
+  font-weight: $font-bold;
+  color: $white;
+  margin: 0;
+
+  @include max-md {
+    font-size: $font-xl;
+  }
+
+  @include max-sm {
+    font-size: $font-lg;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  max-height: 30rem;
+  overflow-y: auto;
+  @include custom-scrollbar(0.25rem);
+
+  @include max-md {
+    max-height: 25rem;
+  }
+}
+
+.episode {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $spacing-3;
+  padding: $spacing-3;
+  background: rgba(255, 255, 255, 0.02);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  @include transition(background, border-color);
+  text-align: left;
+  width: 100%;
+  position: relative;
+
+  @include max-sm {
+    padding: $spacing-2;
+    gap: $spacing-2;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+
+    .rateBtn {
+      opacity: 1;
+    }
+  }
+
+  &.current {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+
+  &.watched {
+    opacity: 0.6;
+  }
+}
+
+.episodeNumber {
+  @include flex-center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.375rem;
+  position: relative;
+
+  @include max-sm {
+    min-width: 2rem;
+    height: 2rem;
+  }
+}
+
+.number {
+  font-size: $font-base;
+  font-weight: $font-semibold;
+  color: $white;
+
+  @include max-sm {
+    font-size: $font-sm;
+  }
+}
+
+.playIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $primary-color;
+}
+
+.episodeInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+  min-width: 0;
+}
+
+.episodeTitle {
+  font-size: $font-sm;
+  font-weight: $font-medium;
+  color: $white;
+  @include truncate;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.episodeMeta {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $spacing-2;
+  font-size: $font-xs;
+  color: $text-secondary;
+
+  @include max-sm {
+    gap: $spacing-1;
+  }
+}
+
+.duration {
+  color: $text-secondary;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.episodeRating {
+  @include flex-center;
+  gap: $spacing-1;
+}
+
+.ratingValue {
+  font-size: $font-xs;
+  font-weight: $font-medium;
+  color: $white;
+}
+
+.reviewCount {
+  color: $text-secondary;
+  font-size: $font-xs;
+}
+
+.rateBtn {
+  background: none;
+  border: none;
+  color: $text-secondary;
+  cursor: pointer;
+  padding: $spacing-2;
+  @include flex-center;
+  border-radius: 0.375rem;
+  @include transition(background, color, opacity);
+  opacity: 0;
+  margin-left: auto;
+
+  @include max-sm {
+    opacity: 1;
+    padding: $spacing-1;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: $white;
+  }
+
+  .rated {
+    color: #fbbf24;
+  }
+}

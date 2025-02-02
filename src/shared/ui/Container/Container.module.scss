@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @include max-md {
+    padding: 0 $container-padding-mobile;
+  }
+}
+
+.sm {
+  max-width: 48rem;
+}
+
+.md {
+  max-width: 64rem;
+}
+
+.lg {
+  max-width: $container-max-width;
+}
+
+.full {
+  max-width: 100%;
+}

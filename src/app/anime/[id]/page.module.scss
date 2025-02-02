@@ -1,0 +1,413 @@
+.main {
+  padding: $spacing-8 0;
+
+  @include max-md {
+    padding: $spacing-6 0;
+  }
+
+  @include max-sm {
+    padding: $spacing-4 0;
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 25rem;
+  gap: $spacing-8;
+  align-items: start;
+  margin-bottom: $spacing-8;
+
+  @include max-lg {
+    grid-template-columns: 1fr 22rem;
+    gap: $spacing-6;
+  }
+
+  @include max-md {
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+    margin-bottom: $spacing-6;
+  }
+}
+
+.playerSection {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: $bg-secondary;
+
+  @include max-md {
+    border-radius: 0.5rem;
+  }
+
+  @include max-sm {
+    border-radius: 0.375rem;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  @include max-md {
+    gap: $spacing-4;
+  }
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+
+  @include max-md {
+    gap: $spacing-4;
+  }
+}
+
+.header {
+  padding-bottom: $spacing-4;
+  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: $font-3xl;
+  font-weight: $font-bold;
+  color: $white;
+  margin: 0 0 $spacing-2;
+  line-height: $leading-tight;
+
+  @include max-md {
+    font-size: $font-2xl;
+  }
+
+  @include max-sm {
+    font-size: $font-xl;
+  }
+}
+
+.originalTitle {
+  font-size: $font-base;
+  color: $text-secondary;
+  margin: 0;
+  font-weight: $font-normal;
+
+  @include max-sm {
+    font-size: $font-sm;
+  }
+}
+
+.rating {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $spacing-2;
+
+  @include max-sm {
+    gap: $spacing-1;
+  }
+}
+
+.ratingValue {
+  font-size: $font-xl;
+  font-weight: $font-bold;
+  color: $white;
+
+  @include max-sm {
+    font-size: $font-lg;
+  }
+}
+
+.ratingNote {
+  font-size: $font-xs;
+  color: $text-secondary;
+  font-weight: $font-normal;
+}
+
+.meta {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $spacing-2;
+  flex-wrap: wrap;
+
+  @include max-sm {
+    gap: $spacing-1;
+  }
+}
+
+.metaText {
+  font-size: $font-sm;
+  color: $text-secondary;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.genres {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $spacing-2;
+  flex-wrap: wrap;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+}
+
+.sectionTitle {
+  font-size: $font-lg;
+  font-weight: $font-semibold;
+  color: $white;
+  margin: 0;
+
+  @include max-sm {
+    font-size: $font-base;
+  }
+}
+
+.text {
+  font-size: $font-sm;
+  line-height: $leading-relaxed;
+  color: $text-secondary;
+  margin: 0;
+
+  @include max-sm {
+    font-size: $font-xs;
+    line-height: $leading-normal;
+  }
+}
+
+// Bottom section
+.episodesSection {
+  margin: $spacing-8 0;
+
+  @include max-md {
+    margin: $spacing-6 0;
+  }
+}
+
+.bottomSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-8;
+  margin-top: $spacing-8;
+
+  @include max-lg {
+    gap: $spacing-6;
+  }
+
+  @include max-md {
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+    margin-top: $spacing-6;
+  }
+
+  &.balanced {
+    .reviewsSection,
+    .commentsSection {
+      min-height: 25rem;
+
+      @include max-md {
+        min-height: 20rem;
+      }
+    }
+  }
+}
+
+.reviewsSection,
+.commentsSection {
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: $spacing-6;
+
+  @include max-md {
+    padding: $spacing-4;
+    border-radius: 0.5rem;
+  }
+
+  @include max-sm {
+    padding: $spacing-3;
+  }
+}
+
+.bottomTitle {
+  font-size: $font-2xl;
+  font-weight: $font-bold;
+  color: $white;
+  margin: 0 0 $spacing-6;
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $spacing-2;
+
+  @include max-md {
+    font-size: $font-xl;
+    margin-bottom: $spacing-4;
+  }
+
+  @include max-sm {
+    font-size: $font-lg;
+  }
+}
+
+.count {
+  font-size: $font-base;
+  color: $text-secondary;
+  font-weight: $font-normal;
+
+  @include max-sm {
+    font-size: $font-sm;
+  }
+}
+
+// Reviews
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.reviewCard {
+  padding: $spacing-4;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.5rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.05);
+
+  @include max-sm {
+    padding: $spacing-3;
+  }
+}
+
+.reviewHeader {
+  @include flex-between;
+  margin-bottom: $spacing-3;
+  gap: $spacing-3;
+}
+
+.reviewAuthor {
+  font-size: $font-sm;
+  font-weight: $font-semibold;
+  color: $white;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.reviewRating {
+  @include flex-center;
+  gap: $spacing-1;
+}
+
+.reviewRatingValue {
+  font-size: $font-sm;
+  font-weight: $font-semibold;
+  color: $white;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.reviewText {
+  font-size: $font-sm;
+  line-height: $leading-relaxed;
+  color: $text-secondary;
+  margin: 0 0 $spacing-2;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.reviewDate {
+  font-size: $font-xs;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+// Comments
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+}
+
+.commentCard {
+  padding: $spacing-3;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0.5rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.05);
+
+  @include max-sm {
+    padding: $spacing-2;
+  }
+}
+
+.commentHeader {
+  @include flex-between;
+  margin-bottom: $spacing-2;
+  gap: $spacing-2;
+}
+
+.commentAuthor {
+  font-size: $font-sm;
+  font-weight: $font-medium;
+  color: $white;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.commentDate {
+  font-size: $font-xs;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.commentText {
+  font-size: $font-sm;
+  line-height: $leading-normal;
+  color: $text-secondary;
+  margin: 0 0 $spacing-2;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.commentReplies {
+  font-size: $font-xs;
+  color: $primary-color;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  @include transition(opacity);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Empty state
+.emptyState {
+  @include flex-center;
+  justify-content: center;
+  min-height: 15rem;
+  padding: $spacing-8;
+
+  @include max-md {
+    min-height: 12rem;
+    padding: $spacing-6;
+  }
+}
+
+.emptyText {
+  font-size: $font-base;
+  color: $text-secondary;
+  text-align: center;
+  margin: 0;
+
+  @include max-sm {
+    font-size: $font-sm;
+  }
+}

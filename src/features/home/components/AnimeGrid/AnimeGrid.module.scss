@@ -1,0 +1,49 @@
+.section {
+  padding: $spacing-8 0;
+
+  @include max-md {
+    padding: $spacing-6 0;
+  }
+
+  @include max-sm {
+    padding: $spacing-4 0;
+  }
+}
+
+.title {
+  font-size: $font-3xl;
+  font-weight: $font-bold;
+  color: $white;
+  margin: 0 0 $spacing-6;
+
+  @include max-md {
+    font-size: $font-2xl;
+    margin-bottom: $spacing-4;
+  }
+
+  @include max-sm {
+    font-size: $font-xl;
+    margin-bottom: $spacing-3;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: $spacing-6;
+
+  @include max-lg {
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: $spacing-4;
+  }
+
+  @include max-md {
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: $spacing-3;
+  }
+
+  @include max-sm {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-2;
+  }
+}

@@ -1,0 +1,43 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  font-weight: $font-semibold;
+  white-space: nowrap;
+}
+
+.default {
+  background: rgba(255, 255, 255, 0.1);
+  color: $text-primary;
+}
+
+.primary {
+  background: rgba($primary-color, 0.2);
+  color: $primary-color;
+}
+
+.success {
+  background: rgba($success-color, 0.2);
+  color: $success-color;
+}
+
+.warning {
+  background: rgba($warning-color, 0.2);
+  color: $warning-color;
+}
+
+.error {
+  background: rgba($error-color, 0.2);
+  color: $error-color;
+}
+
+.sm {
+  padding: 0.125rem $spacing-1;
+  font-size: 0.625rem;
+}
+
+.md {
+  padding: 0.125rem $spacing-2;
+  font-size: $font-xs;
+}

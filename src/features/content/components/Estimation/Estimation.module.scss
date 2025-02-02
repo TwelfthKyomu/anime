@@ -1,0 +1,32 @@
+.estimation {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  font-size: $font-sm;
+  color: $text-secondary;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.badge {
+  padding: 0.125rem $spacing-2;
+  background: rgba(239, 68, 68, 0.2);
+  color: $error-color;
+  border-radius: 0.25rem;
+  font-weight: $font-semibold;
+  font-size: $font-xs;
+
+  @include max-sm {
+    font-size: 0.625rem;
+  }
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.text {
+  font-weight: $font-medium;
+}

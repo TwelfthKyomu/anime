@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "../styles/_module.scss";
+import "../styles/globals.scss";
 import { memo, ReactNode } from "react";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const viewport: Viewport = {
     userScalable: false,
 }
 
-export default memo(function RootLayout({children}: Readonly<{
+export default memo(function RootLayout({ children }: Readonly<{
     children: ReactNode;
 }>) {
     return (

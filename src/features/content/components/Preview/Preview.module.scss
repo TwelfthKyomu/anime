@@ -1,0 +1,96 @@
+.preview {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-6;
+
+  @include max-md {
+    padding: $spacing-4;
+  }
+
+  @include max-sm {
+    padding: $spacing-3;
+  }
+}
+
+.description {
+  @include flex-between;
+  align-items: flex-start;
+  margin-bottom: $spacing-6;
+  gap: $spacing-6;
+
+  @include max-md {
+    @include flex-column;
+    gap: $spacing-4;
+    margin-bottom: $spacing-4;
+  }
+}
+
+.name {
+  flex: 1;
+}
+
+.title {
+  font-size: $font-4xl;
+  font-weight: $font-bold;
+  margin: 0 0 $spacing-2;
+  color: $white;
+
+  @include max-md {
+    font-size: $font-2xl;
+  }
+
+  @include max-sm {
+    font-size: $font-xl;
+  }
+}
+
+.originalTitle {
+  font-size: $font-lg;
+  font-weight: $font-normal;
+  margin: 0 0 $spacing-4;
+  color: $text-secondary;
+
+  @include max-md {
+    font-size: $font-base;
+  }
+
+  @include max-sm {
+    font-size: $font-sm;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-4;
+
+  @include max-md {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.favorite {
+  background: none;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  padding: $spacing-2;
+  @include flex-center;
+  border-radius: 0.5rem;
+  @include transition(all);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.playerWrapper {
+  width: 100%;
+}

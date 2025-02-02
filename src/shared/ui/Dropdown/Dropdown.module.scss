@@ -1,0 +1,18 @@
+.trigger {
+  display: inline-block;
+}
+
+.content {
+  min-width: 12rem;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(1rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: $spacing-2;
+  z-index: 1000;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
+
+  @include max-sm {
+    min-width: 10rem;
+  }
+}

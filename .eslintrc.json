@@ -1,0 +1,86 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "import"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended"
+  ],
+    "rules": {
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+        "no-trailing-spaces": ["error", { "skipBlankLines": false }],
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+        "max-len": ["warn", { "code": 120, "ignoreUrls": true, "ignoreStrings": true }],
+        "padding-line-between-statements": [
+            "warn",
+            { "blankLine": "always", "prev": "*", "next": "return" },
+            { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+            { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
+        ],
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/consistent-type-imports": "error",
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+                "newlines-between": "always",
+                "alphabetize": { "order": "asc", "caseInsensitive": true }
+            }
+        ],
+        "import/no-cycle": "error",
+        "import/no-unresolved": "error",
+        "react/jsx-key": "error",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/jsx-curly-spacing": ["error", { "when": "always", "children": true }],
+        "react/jsx-newline": ["error", { "prevent": true }],
+        "react/jsx-first-prop-new-line": ["error", "multiline"],
+        "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "multiline" }],
+        "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
+        "react/jsx-wrap-multilines": [
+            "error",
+            {
+                "declaration": "parens-new-line",
+                "assignment": "parens-new-line",
+                "return": "parens-new-line",
+                "arrow": "parens-new-line",
+                "condition": "ignore",
+                "logical": "ignore",
+                "prop": "ignore"
+            }
+        ],
+        "jsx-a11y/alt-text": "error",
+        "jsx-a11y/anchor-is-valid": "error"
+    },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
+

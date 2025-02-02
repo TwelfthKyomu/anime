@@ -1,3 +1,108 @@
 .footer {
-	min-height: 100dvh;
+  padding: $spacing-16 0 $spacing-8;
+  background: $bg-secondary;
+  margin-top: $spacing-20;
+  border-top: 1px solid rgba($white, 0.05);
+
+  @include max-md {
+    padding: $spacing-12 0 $spacing-6;
+    margin-top: $spacing-16;
+  }
+
+  @include max-sm {
+    padding: $spacing-8 0 $spacing-4;
+    margin-top: $spacing-12;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-12;
+  margin-bottom: $spacing-12;
+
+  @include max-md {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+    margin-bottom: $spacing-8;
+  }
+
+  @include max-sm {
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+    margin-bottom: $spacing-6;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.title {
+  font-size: $font-base;
+  font-weight: 600;
+  color: $white;
+  margin: 0;
+
+  @include max-sm {
+    font-size: $font-sm;
+  }
+}
+
+.description {
+  font-size: $font-sm;
+  color: $text-secondary;
+  line-height: 1.6;
+  margin: 0;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+}
+
+.link {
+  font-size: $font-sm;
+  color: $text-secondary;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $white;
+  }
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}
+
+.bottom {
+  padding-top: $spacing-8;
+  border-top: 1px solid rgba($white, 0.05);
+
+  @include max-md {
+    padding-top: $spacing-6;
+  }
+
+  @include max-sm {
+    padding-top: $spacing-4;
+  }
+}
+
+.copyright {
+  font-size: $font-sm;
+  color: $text-secondary;
+  text-align: center;
+  margin: 0;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
 }

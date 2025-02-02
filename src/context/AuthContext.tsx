@@ -40,11 +40,11 @@ export const useAuth = () => {
     return context;
 };
 
-export const AuthProvider: FC<{ children: ReactNode }> = ({children}) => {
+export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [state, setState] = useState<AuthState>(INITIAL_STATE);
     
     const setAuthState = useCallback((updates: Partial<AuthState>) => {
-        setState(prev => ({...prev, ...updates, error: null}));
+        setState(prev => ({ ...prev, ...updates, error: null }));
     }, []);
     
     const login = useCallback((token: string, user: User): Promise<void> => {
@@ -57,7 +57,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({children}) => {
 // Choose an appropriate cookie option for security
 const cookieOptions = {
     // Set secure flag to true if using HTTPS
-    secure: true, 
+    secure: true,
     // HTTP only ensures the cookie is not accessible via JavaScript
     httpOnly: true,
     // Set a desirable expiration time
@@ -75,7 +75,7 @@ const encryptData: EncryptDataFunction = (data) => {
 
 Cookies.set('token', encryptData(token), cookieOptions);
 Cookies.set('user', encryptData(JSON.stringify(user)), cookieOptions);
-            setAuthState({isAuthenticated: true, user, isLoading: false});
+            setAuthState({ isAuthenticated: true, user, isLoading: false });
             return Promise.resolve();
         } catch (error) {
             setAuthState({
@@ -92,7 +92,7 @@ Cookies.set('user', encryptData(JSON.stringify(user)), cookieOptions);
         try {
             window?.localStorage?.removeItem('token');
             window?.localStorage?.removeItem('user');
-            setAuthState({...INITIAL_STATE, isLoading: false});
+            setAuthState({ ...INITIAL_STATE, isLoading: false });
             resolve();
         } catch (error) {
             setAuthState({
@@ -120,7 +120,7 @@ Cookies.set('user', encryptData(JSON.stringify(user)), cookieOptions);
             const userStr = window?.localStorage?.getItem('user');
             
             if (!token || !userStr) {
-                setAuthState({...INITIAL_STATE, isLoading: false});
+                setAuthState({ ...INITIAL_STATE, isLoading: false });
                 
                 if (!localStorage.getItem('authData')) {
                     return Promise.reject(new Error('Missing auth data in localStorage'));
@@ -134,7 +134,7 @@ Cookies.set('user', encryptData(JSON.stringify(user)), cookieOptions);
                 throw new Error('Invalid user data');
             }
             
-            setAuthState({isAuthenticated: true, user, isLoading: false});
+            setAuthState({ isAuthenticated: true, user, isLoading: false });
         } catch (error) {
             setAuthState({
                 ...INITIAL_STATE,

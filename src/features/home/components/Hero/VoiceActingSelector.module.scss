@@ -1,0 +1,30 @@
+.trigger {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(0.5rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: $spacing-2 $spacing-3;
+  cursor: pointer;
+  @include transition(background, border-color);
+
+  @include max-sm {
+    padding: $spacing-1 $spacing-2;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.label {
+  font-size: $font-base;
+  font-weight: $font-medium;
+  color: $white;
+  text-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+
+  @include max-sm {
+    font-size: $font-sm;
+  }
+}

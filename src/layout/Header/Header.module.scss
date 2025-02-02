@@ -1,37 +1,86 @@
-@use '@/styles/function/functions' as *;
-@use '@/styles/function/mixin' as *;
-@use '@/styles/abstact/extension' as *;
-@use '@/styles/abstact/effect' as *;
-
 .header {
-	position: relative;
-	z-index: 1;
-	margin-block: d-vw(8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $bg-primary;
 }
 
-.nav {
-	display: flex;
-	justify-content: space-between;
+.container {
+  @include flex-between;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-4 $spacing-6;
 
-	a {
-		color: inherit;
-		display: block;
-		background: get-color(background, dark, 300);
-		padding: d-vw(12) d-vw(16);
-		font-size: d-vw(16);
+  @include max-md {
+    padding: $spacing-3 $spacing-4;
+  }
 
-		@include shadow-sm;
-		@include border-radius-custom(24);
-		@include transition(background, box-shadow);
-
-		&:hover {
-			background: rgba(get-color(hover, dark, primary), 0.7);
-		}
-	}
+  @include max-sm {
+    padding: $spacing-3 $spacing-3;
+  }
 }
 
-.navMenu {
-	display: flex;
-	align-items: center;
-	gap: d-vw(8);
+.logo {
+  @include flex-center;
+  gap: $spacing-2;
+}
+
+.logoText {
+  font-size: $font-2xl;
+  font-weight: $font-bold;
+  color: $white;
+
+  @include max-sm {
+    font-size: $font-xl;
+  }
+}
+
+.actions {
+  @include flex-center;
+  gap: $spacing-3;
+
+  @include max-sm {
+    gap: $spacing-2;
+  }
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  color: $text-secondary;
+  cursor: pointer;
+  padding: $spacing-2;
+  @include flex-center;
+  border-radius: 0.5rem;
+  @include transition(color, background);
+
+  @include max-sm {
+    padding: $spacing-1;
+  }
+
+  &:hover {
+    color: $white;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.avatar {
+  @include flex-center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: $bg-secondary;
+  color: $text-secondary;
+  cursor: pointer;
+  @include transition(background, color);
+
+  @include max-sm {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: $white;
+  }
 }

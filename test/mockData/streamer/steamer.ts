@@ -5,7 +5,7 @@ export const streamer = {
                 range: "bytes=0-"
             },
             query: {
-                video: "video.mp4"
+                video: "videos.mp4"
             }
         },
         res: {

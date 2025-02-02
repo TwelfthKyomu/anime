@@ -1,0 +1,25 @@
+.videoPreview {
+  @include absolute-cover;
+}
+
+.poster {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  @include transition(opacity);
+  transition-duration: 0.5s;
+  z-index: 1;
+
+  &.visible {
+    opacity: 1;
+  }
+}

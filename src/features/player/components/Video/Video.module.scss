@@ -1,0 +1,33 @@
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  display: block;
+  cursor: pointer;
+  
+  &:active {
+    cursor: pointer;
+  }
+
+  // Полноэкранный режим
+  :fullscreen & {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  :-webkit-full-screen & {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  :-moz-full-screen & {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  :-ms-fullscreen & {
+    width: 100vw;
+    height: 100vh;
+  }
+}

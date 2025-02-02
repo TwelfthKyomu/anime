@@ -2,15 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     sassOptions: {
-        additionalData: `$var: red;`,
+        includePaths: ['./src/styles'],
+        additionalData: `@use "sass:math"; @use "@/styles/abstracts" as *;`,
         silenceDeprecations: ['legacy-js-api'],
-    },
-    webpack(config) {
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ['@svgr/webpack']
-        });
-        return config;
     },
     async headers() {
         return [

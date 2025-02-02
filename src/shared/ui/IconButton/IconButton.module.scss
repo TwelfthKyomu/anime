@@ -1,0 +1,49 @@
+.button {
+  background: none;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  @include flex-center;
+  border-radius: 0.25rem;
+  @include transition(all);
+  outline: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @include focus-visible;
+}
+
+.default {
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+}
+
+.ghost {
+  &:hover:not(:disabled) {
+    transform: scale(1.1);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+}
+
+.sm {
+  padding: $spacing-1;
+}
+
+.md {
+  padding: $spacing-2;
+}
+
+.lg {
+  padding: $spacing-3;
+}

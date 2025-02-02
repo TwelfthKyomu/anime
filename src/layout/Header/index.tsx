@@ -1,36 +1,34 @@
-import Link from "next/link";
-import styles from './Header.module.scss'
+'use client';
 
-const Header = () => {
-    return (
-        <header className={ styles.header }>
-            <nav className={ styles.nav }>
-                <ul className={styles.navMenu}>
-                    <li>
-                        <Link href="/public">
-                            Главная
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/public">
-                            Для вас
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/public">
-                            Топ
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/live">
-                            В прямом эфире
-                        </Link>
-                    </li>
-                </ul>
-                <Link href="/public">Войти</Link>
-            </nav>
-        </header>
-    )
-}
+import { FC } from 'react';
+import Link from 'next/link';
+import { Search, Bell, User } from 'lucide-react';
+import styles from './Header.module.scss';
+
+export const Header: FC = () => {
+  return (
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <Link href="/" className={styles.logo}>
+          <span className={styles.logoText}>Anime</span>
+        </Link>
+
+        <div className={styles.actions}>
+          <button className={styles.iconButton} aria-label="Search">
+            <Search size={20} />
+          </button>
+
+          <button className={styles.iconButton} aria-label="Notifications">
+            <Bell size={20} />
+          </button>
+
+          <button className={styles.avatar} aria-label="Profile">
+            <User size={18} />
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
 
 export default Header;

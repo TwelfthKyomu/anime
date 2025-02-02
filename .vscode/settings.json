@@ -3,6 +3,8 @@
     "editor.codeActionsOnSave": {
         "source.fixAll": "explicit"
     },
-    "editor.codeActions.showPath": true
+    "editor.codeActions.showPath": true,
+    "kiroAgent.configureMCP": "Disabled",
+    "typescript.autoClosingTags": false
     // ...existing code...
 }

@@ -1,0 +1,93 @@
+.card {
+  display: block;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: $bg-secondary;
+  @include transition(box-shadow);
+
+  @include max-sm {
+    border-radius: 0.5rem;
+  }
+
+  &:hover {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+
+    .overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.overlay {
+  @include absolute-cover;
+  @include flex-center;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  @include transition(opacity);
+}
+
+.playIcon {
+  color: $white;
+  filter: drop-shadow(0 0.125rem 0.5rem rgba(0, 0, 0, 0.5));
+}
+
+.episode {
+  position: absolute;
+  top: $spacing-2;
+  right: $spacing-2;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(0.25rem);
+
+  @include max-sm {
+    top: $spacing-1;
+    right: $spacing-1;
+  }
+}
+
+.info {
+  padding: $spacing-3;
+
+  @include max-sm {
+    padding: $spacing-2;
+  }
+}
+
+.title {
+  font-size: $font-base;
+  font-weight: $font-semibold;
+  color: $white;
+  margin: 0 0 $spacing-2;
+  @include line-clamp(2);
+
+  @include max-sm {
+    font-size: $font-sm;
+    margin-bottom: $spacing-1;
+  }
+}
+
+.rating {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $spacing-2;
+}
+
+.ratingValue {
+  font-size: $font-sm;
+  font-weight: $font-medium;
+  color: $text-secondary;
+
+  @include max-sm {
+    font-size: $font-xs;
+  }
+}

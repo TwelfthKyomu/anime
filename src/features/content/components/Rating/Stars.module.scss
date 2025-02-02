@@ -1,0 +1,22 @@
+.stars {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.star {
+  color: rgba(255, 255, 255, 0.3);
+  @include transition(color);
+
+  &.full {
+    color: #fbbf24;
+  }
+
+  &.half {
+    color: #fbbf24;
+    opacity: 0.6;
+  }
+
+  &.empty {
+    color: rgba(255, 255, 255, 0.2);
+  }
+}

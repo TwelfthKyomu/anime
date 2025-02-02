@@ -1,0 +1,105 @@
+.ratingSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+  align-items: center;
+  margin-bottom: $spacing-6;
+}
+
+.label {
+  font-size: $font-base;
+  font-weight: $font-semibold;
+  color: $white;
+  margin: 0;
+
+  @include max-sm {
+    font-size: $font-sm;
+  }
+}
+
+.stars {
+  @include flex-center;
+  gap: $spacing-1;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include max-sm {
+    gap: 0.125rem;
+  }
+}
+
+.starBtn {
+  background: none;
+  border: none;
+  padding: $spacing-1;
+  cursor: pointer;
+  @include transition(transform);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @include max-sm {
+    padding: 0.125rem;
+  }
+}
+
+.star {
+  color: rgba(255, 255, 255, 0.2);
+  @include transition(color);
+}
+
+.starActive {
+  color: #fbbf24;
+}
+
+.ratingValue {
+  font-size: $font-3xl;
+  font-weight: $font-bold;
+  color: $white;
+  margin: 0;
+
+  @include max-sm {
+    font-size: $font-2xl;
+  }
+}
+
+.reviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+}
+
+.textarea {
+  width: 100%;
+  padding: $spacing-3;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: $white;
+  font-size: $font-sm;
+  font-family: inherit;
+  resize: vertical;
+  @include transition(border-color);
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+
+  &::placeholder {
+    color: $text-secondary;
+  }
+
+  @include max-sm {
+    padding: $spacing-2;
+    font-size: $font-xs;
+  }
+}
+
+.charCount {
+  font-size: $font-xs;
+  color: $text-secondary;
+  text-align: right;
+  margin: 0;
+}

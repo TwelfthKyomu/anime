@@ -1,0 +1,55 @@
+.trigger {
+  background: none;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  padding: $spacing-2;
+  @include flex-center;
+  @include transition(opacity);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.settingsMenu {
+  min-width: 12rem;
+}
+
+.menuItem {
+  @include flex-between;
+  width: 100%;
+  gap: $spacing-3;
+}
+
+.menuItemRight {
+  @include flex-center;
+  gap: $spacing-1;
+  color: $text-secondary;
+  font-size: $font-xs;
+}
+
+.currentValue {
+  color: $text-secondary;
+}
+
+.backButton {
+  @include flex-center;
+  gap: $spacing-2;
+  color: $text-secondary;
+}
+
+.backIcon {
+  transform: rotate(180deg);
+}
+
+.option {
+  width: 100%;
+  text-align: left;
+  color: $text-secondary;
+
+  &.active {
+    color: $primary-color;
+    font-weight: $font-semibold;
+  }
+}
